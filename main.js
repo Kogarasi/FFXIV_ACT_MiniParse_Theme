@@ -1,3 +1,5 @@
 (function(){
-  console.log("loaded theme");
+  document.addEventListener("onOverlayDataUpdate", function(e){
+    console.log(e.detail);
+  });
 })();
