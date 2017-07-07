@@ -1,5 +1,5 @@
 (function(){
   document.addEventListener("onOverlayDataUpdate", function(e){
-    console.log(e.detail);
+    console.log(JSON.stringify(e.detail));
   });
 })();
