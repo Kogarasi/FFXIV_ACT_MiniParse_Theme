@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 
+<meta charset="utf-8" />
+
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
 
+<!-- Normalize CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet" />
+
 <link href="index.css" rel="stylesheet" />
+<body ng-app="miniparse" ng-controller="mainController">
 
-Hello world
+  <content class="content">
+    <table class="mainTable">
+      <thead>
+        <tr class="small">
+          <td>Job</td>
+          <td>Name</td>
+          <td>DPS</td>
+          <td>Crit</td>
+          <td>DH</td>
+          <td>C/DH</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="chara in characters" class="charaInfo {{chara.roll}}">
+          <td class="small">{{chara.job}}</td>
+          <td class="name-property small">{{chara.name}}</td>
+          <td class="right">{{chara.dps}}</td>
+          <td class="right small">{{chara.crit}}</td>
+          <td class="right small">{{chara.directHit}}</td>
+          <td class="right small">{{chara.critDirectHit}}</td>
+          <td class="bar {{chara.roll}}" style="width: {{chara.dpsrate}}%"></td>
+      </tbody>
+    </table>
+  </content>
 
+  <footer class="footer">
+    <div class="empty">
+    </div>
+    <div class="totalDPS">
+      {{totalDPS}}dps
+    </div>
+    <div class="duration">
+      {{duration}}
+    </div>
+  </footer>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 <script src="main.js"></script>
