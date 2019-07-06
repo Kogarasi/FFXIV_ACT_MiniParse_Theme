@@ -37,6 +37,7 @@ app.controller( 'mainController', [ "$scope", function( $scope ){
       Mrd: "tank",
       War: "tank",
       Drk: "tank",
+      Gnb: "tank",
 
       Cnj: "healer",
       Whm: "healer",
@@ -59,6 +60,7 @@ app.controller( 'mainController', [ "$scope", function( $scope ){
       Acn: "dps",
       Smn: "dps",
       Rdm: "dps",
+      Dnc: "dps",
     };
 
     return rollType[job];
